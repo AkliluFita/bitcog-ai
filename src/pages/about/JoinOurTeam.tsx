@@ -76,7 +76,7 @@ const JoinOurTeam = () => {
                       <h4 className="text-sm font-semibold text-accent mb-3">Roles we're looking for:</h4>
                       <div className="flex flex-wrap gap-2">
                         {position.areas.map((area, areaIndex) => (
-                          <Badge key={areaIndex} variant="primary" className="text-xs">
+                          <Badge key={areaIndex} variant="default" className="text-xs">
                             {area}
                           </Badge>
                         ))}

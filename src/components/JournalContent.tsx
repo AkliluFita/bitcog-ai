@@ -50,8 +50,8 @@ export const JournalContent: React.FC = () => {
 
   return (
     <div className="bg-background">
-      <div className="container-custom py-16">
-        <div className="grid lg:grid-cols-3 gap-12"> 
+      <div className="container-custom py-8 sm:py-12 lg:py-16 px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12"> 
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
             {/* About the Journal */}
@@ -183,14 +183,20 @@ export const JournalContent: React.FC = () => {
                   </p>
                 </div>
                 <div className="pt-4 border-t">
-                  <a 
-                    href="/BITCOG-Author-Guide.pdf" 
-                    download="BITCOG-Author-Guide.pdf"
-                    className="inline-flex items-center justify-center w-full rounded-md bg-primary/10 text-secondary hover:bg-primary/20 transition-colors py-3 font-medium"
+                  <Button 
+                    asChild
+                    className="w-full bg-primary/10 text-primary hover:bg-primary/20"
                   >
-                    <FileText className="h-4 w-4 mr-2" />
-                    Download Full Guide (PDF)
-                  </a>
+                    <a 
+                      href="/BITCOG-Author-Guide.pdf" 
+                      download="BITCOG-Author-Guide.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FileText className="h-4 w-4 mr-2" />
+                      Download Full Guide (PDF)
+                    </a>
+                  </Button>
                 </div>
               </CardContent>
             </Card>
