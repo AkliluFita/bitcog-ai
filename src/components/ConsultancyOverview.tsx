@@ -95,7 +95,7 @@ export const ConsultancyOverview: React.FC = () => {
             Comprehensive Solutions
           </Badge>
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-            Our <span className="text-accent">Services</span>
+            Our <span className="text-accent">Services</span> 
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             From AI strategy to implementation, we provide end-to-end

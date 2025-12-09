@@ -3,11 +3,11 @@ import { Search, BookOpen, Users, Calendar, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
-import journalCover from '@/assets/journal-header.png';
+import journalCover from '@/assets/Journal of AI and DS cover.png';
 
 export const JournalHeader: React.FC = () => {
   return (
-    <div className="bg-blue-400 text-white">
+    <div className="bg-accent text-white">
       {/* Main Header */}
       <div className="container-custom py-6 sm:py-8 md:py-12 px-4 sm:px-6">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-0">
