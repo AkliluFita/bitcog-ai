@@ -142,24 +142,50 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, onNavigat
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-background/95 backdrop-blur-md border-t border-border">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              {menuItems.map((item) => (
-                <div key={item.id}>
+        <div 
+          className={`md:hidden fixed inset-0 top-20 z-40 transition-all duration-300 ${
+            isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+          }`}
+        >
+          {/* Backdrop */}
+          <div 
+            className={`absolute inset-0 bg-background/80 backdrop-blur-lg transition-opacity duration-300 ${
+              isMenuOpen ? 'opacity-100' : 'opacity-0'
+            }`}
+            onClick={() => setIsMenuOpen(false)}
+          />
+          
+          {/* Menu Content */}
+          <div 
+            className={`relative bg-gradient-to-b from-background via-background to-primary/5 border-t border-border/50 shadow-2xl transition-all duration-400 transform ${
+              isMenuOpen ? 'translate-y-0' : '-translate-y-4'
+            }`}
+          >
+            <div className="px-4 py-6 space-y-2 max-h-[calc(100vh-5rem)] overflow-y-auto">
+              {menuItems.map((item, index) => (
+                <div 
+                  key={item.id}
+                  className={`transform transition-all duration-300 ${
+                    isMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
+                  }`}
+                  style={{ transitionDelay: isMenuOpen ? `${index * 50}ms` : '0ms' }}
+                >
                   {item.type === 'dropdown' ? (
                     <DropdownMenu>
-                      <DropdownMenuTrigger className="flex w-full items-center justify-between px-3 py-2 rounded-md text-base font-medium text-foreground/80 hover:text-accent hover:bg-primary/5">
-                        {item.label}
-                        <ChevronDown className="h-4 w-4" />
+                      <DropdownMenuTrigger className="flex w-full items-center justify-between px-4 py-3 rounded-xl text-base font-medium text-foreground/90 hover:text-accent hover:bg-accent/10 transition-all duration-200 group">
+                        <span className="flex items-center gap-3">
+                          <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent group-hover:scale-125 transition-all" />
+                          {item.label}
+                        </span>
+                        <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent align="start" className="w-48">
+                      <DropdownMenuContent align="start" className="w-56 ml-4 bg-background/95 backdrop-blur-xl border-border/50 shadow-xl">
                         {item.items?.map((subItem) => (
                           <DropdownMenuItem key={subItem.id} asChild>
                             <Link
                               to={subItem.id}
                               onClick={() => setIsMenuOpen(false)}
-                              className="w-full"
+                              className="w-full px-4 py-2.5 text-sm hover:text-accent transition-colors"
                             >
                               {subItem.label}
                             </Link>
@@ -171,31 +197,48 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, onNavigat
                     <Link
                       to={item.id}
                       onClick={() => setIsMenuOpen(false)}
-                      className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                      className={`flex items-center gap-3 w-full text-left px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 group ${
                         location.pathname === item.id
-                          ? 'text-accent bg-primary/10'
-                          : 'text-foreground/80 hover:text-accent hover:bg-primary/5'
+                          ? 'text-accent bg-accent/15 shadow-sm'
+                          : 'text-foreground/90 hover:text-accent hover:bg-accent/10'
                       }`}
                     >
+                      <span className={`w-1.5 h-1.5 rounded-full transition-all ${
+                        location.pathname === item.id 
+                          ? 'bg-accent scale-125' 
+                          : 'bg-accent/50 group-hover:bg-accent group-hover:scale-125'
+                      }`} />
                       {item.label}
                     </Link>
                   ) : (
                     <button
                       onClick={() => handleNavClick(item.id)}
-                      className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                      className={`flex items-center gap-3 w-full text-left px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 group ${
                         activeSection === item.id
-                          ? 'text-accent bg-primary/10'
-                          : 'text-foreground/80 hover:text-accent hover:bg-primary/5'
+                          ? 'text-accent bg-accent/15 shadow-sm'
+                          : 'text-foreground/90 hover:text-accent hover:bg-accent/10'
                       }`}
                     >
+                      <span className={`w-1.5 h-1.5 rounded-full transition-all ${
+                        activeSection === item.id 
+                          ? 'bg-accent scale-125' 
+                          : 'bg-accent/50 group-hover:bg-accent group-hover:scale-125'
+                      }`} />
                       {item.label}
                     </button>
                   )}
                 </div>
               ))}
+              
+              {/* Decorative Footer */}
+              <div className="pt-6 mt-4 border-t border-border/30">
+                <p className="text-xs text-muted-foreground text-center">
+                  Turning Data into Insightful Action
+                </p>
+              </div>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
