@@ -185,7 +185,7 @@ export const JournalContent: React.FC = () => {
                 <div className="pt-4 border-t">
                   <Button 
                     asChild
-                    className="w-full bg-primary/10 text-primary hover:bg-primary/20"
+                    className="w-full bg-primary/10  hover:bg-primary/20"
                   >
                     <a 
                       href="/BITCOG-Author-Guide.pdf" 

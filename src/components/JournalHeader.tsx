@@ -7,7 +7,7 @@ import journalCover from '@/assets/journal-header.png';
 
 export const JournalHeader: React.FC = () => {
   return (
-    <div className="bg-primary text-white">
+    <div className="bg-blue-400 text-white">
       {/* Main Header */}
       <div className="container-custom py-6 sm:py-8 md:py-12 px-4 sm:px-6">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-0">
