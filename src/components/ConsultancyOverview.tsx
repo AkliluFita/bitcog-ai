@@ -169,7 +169,7 @@ export const ConsultancyOverview: React.FC = () => {
                   <div className="flex items-center justify-between mb-2">
                     <Badge
                        variant={
-                        news.type === "Client Success" ? "primary" : "outline"
+                        news.type === "Client Success" ? "default" : "outline"
                       }
                       className="text-xs"
                     >

@@ -392,7 +392,7 @@ Organizations that follow these practices typically achieve full ROI within 18-2
                           {service.tags.map((tag, tagIndex) => (
                             <Badge
                               key={tagIndex}
-                              variant="primary"
+                              variant="default"
                               className="text-xs"
                             >
                               {tag}
