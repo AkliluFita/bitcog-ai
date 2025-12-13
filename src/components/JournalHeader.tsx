@@ -7,14 +7,14 @@ import journalCover from '@/assets/Journal of AI and DS cover.png';
 
 export const JournalHeader: React.FC = () => {
   return (
-    <div className="bg-accent text-white">
+    <div className="bg-blue-500 text-white">
       {/* Main Header */}
       <div className="container-custom py-6 sm:py-8 md:py-12 px-4 sm:px-6">
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-0">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-0 bo">
           {/* Journal Info & Cover */}
-          <div className="flex flex-col items-center lg:flex-row lg:items-start gap-4 sm:gap-6">
+          <div className="flex flex-col items-center lg:flex-row lg:items- gap-4 sm:gap-6 border">
             {/* Journal Cover */}
-            <div className="w-20 h-28 sm:w-24 sm:h-32 md:w-32 md:h-40 flex-shrink-0 rounded-lg overflow-hidden shadow-2xl border-4 border-white/20">
+            <div className="w-20 h-28 sm:w-24 sm:h-32 md:w-32 md:h-40 flex-shrink-0 rounded-lg overflow-hidden shadow-2xl border-4 border-dark/20">
               <img
                 src={journalCover}
                 alt="Bitcog Journal of AI and Data Science Cover"
@@ -30,23 +30,26 @@ export const JournalHeader: React.FC = () => {
               <Badge className="mb-3 sm:mb-4 bg-white/10 text-white border-white/20 hover:bg-white/20">
                 Open Access
               </Badge>
-              <p className="text-xs sm:text-sm md:text-base lg:text-lg max-w-2xl mx-auto lg:mx-0 px-2 lg:px-0">
+              {/* <p className="text-xs sm:text-sm md:text-base lg:text-lg max-w-2xl mx-auto lg:mx-0 px-2 lg:px-0">
                 The BITCOG Journal of AI and Data Science is an international, peer-reviewed scholarly journal dedicated to advancing knowledge and fostering innovation in artificial intelligence and data-driven research.
                 The journal serves as a platform for academics, researchers, and practitioners to share novel methodologies, empirical studies, and critical insights that shape the future of AI and its societal impact.
-              </p>
+              </p> */}
             </div>
           </div>
 
           {/* Metrics */}
           <div className="flex justify-center lg:justify-start gap-3 sm:gap-4 lg:gap-8">
-            <div className="bg-white/10 rounded-lg p-2 sm:p-3 md:p-4 min-w-[80px] sm:min-w-[100px] md:min-w-[120px] text-center">
+            {/* <div className="bg-white/10 rounded-lg p-2 sm:p-3 md:p-4 min-w-[80px] sm:min-w-[100px] md:min-w-[120px] text-center">
               <div className="text-xl sm:text-2xl md:text-3xl font-bold">2.8</div>
               <div className="text-[10px] sm:text-xs md:text-sm text-white/70">CiteScore</div>
             </div>
             <div className="bg-white/10 rounded-lg p-2 sm:p-3 md:p-4 min-w-[80px] sm:min-w-[100px] md:min-w-[120px] text-center">
               <div className="text-xl sm:text-2xl md:text-3xl font-bold">3.3</div>
               <div className="text-[10px] sm:text-xs md:text-sm text-white/70">Impact Factor</div>
-            </div>
+            </div> */}
+            <div className="text-[0.8rem] md:text-[1.3rem] text-white/70"> Journal Metrics (IF, CiteScore): TBA – Coming Soon!</div>
+
+
           </div>
         </div>
       </div>

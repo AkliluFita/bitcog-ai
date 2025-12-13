@@ -104,7 +104,7 @@ export const ProcessSection: React.FC = () => {
     'Proven methodology with 95% success rate',
     'Transparent communication throughout',
     'Flexible approach adapting to your needs',
-    'Expert team with 10+ years experience',
+    'Expert team with 5+ years experience',
     'Post-launch support and optimization',
     'Scalable solutions built for growth'
   ];
@@ -217,7 +217,7 @@ export const ProcessSection: React.FC = () => {
               <div className="text-sm text-accent">Success Rate</div>
             </Card>
             <Card className="text-center p-6">
-              <div className="text-3xl font-bold text-accent mb-2">500+</div>
+              <div className="text-3xl font-bold text-accent mb-2">20+</div>
               <div className="text-sm text-accent">Projects Delivered</div>
             </Card>
             <Card className="text-center p-6">
@@ -225,7 +225,7 @@ export const ProcessSection: React.FC = () => {
               <div className="text-sm text-accent">Support Available</div>
             </Card>
             <Card className="text-center p-6">
-              <div className="text-3xl font-bold text-accent mb-2">10+</div>
+              <div className="text-3xl font-bold text-accent mb-2">5+</div>
               <div className="text-sm text-accent">Years Experience</div>
             </Card>
           </div>

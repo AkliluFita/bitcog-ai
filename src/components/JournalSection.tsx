@@ -155,7 +155,7 @@ export const JournalSection: React.FC = () => {
             Academic Publishing
           </Badge>
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-            Submit to <span className="text-accent">Bitcog Insightive Journal</span>
+            Submit to <span className="text-accent">BITCOG Journal of AI and Data Science</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Share your cutting-edge research with the global AI and data science community. 
@@ -164,7 +164,7 @@ export const JournalSection: React.FC = () => {
         </div>
 
         {/* Journal Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           {journalStats.map((stat, index) => {
             const Icon = stat.icon;
             return (
@@ -181,7 +181,7 @@ export const JournalSection: React.FC = () => {
               </Card>
             );
           })}
-        </div>
+        </div> */}
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Submission Form */}
@@ -310,7 +310,7 @@ export const JournalSection: React.FC = () => {
 
           {/* Guidelines */}
           <div className="space-y-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <Card className="border-2 border-accent/20">
+            <Card className="border-2 ">
               <CardHeader className="bg-gradient-to-r from-accent/5 to-primary/5">
                 <CardTitle className="flex items-center">
                   <Target className="mr-3 h-6 w-6 text-accent" />

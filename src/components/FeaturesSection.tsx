@@ -40,7 +40,7 @@ export const FeaturesSection: React.FC = () => {
 
   const stats = [
     { number: '99.9%', label: 'Uptime Guarantee', icon: Zap },
-    { number: '150+', label: 'Global Partners', icon: Globe },
+    { number: '5+', label: 'Global Partners', icon: Globe },
     { number: '24/7', label: 'Expert Support', icon: Users }
   ];
 

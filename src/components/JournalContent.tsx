@@ -17,12 +17,12 @@ import {
 
 export const JournalContent: React.FC = () => {
   const journalStats = [
-    { icon: Award, label: 'Impact Factor', value: '3.3', color: 'text-blue-600' },
-    { icon: TrendingUp, label: 'CiteScore', value: '2.8', color: 'text-green-600' },
+    // { icon: Award, label: 'Impact Factor', value: '3.3', color: 'text-blue-600' },
+    // { icon: TrendingUp, label: 'CiteScore', value: '2.8', color: 'text-green-600' },
     { icon: Users, label: 'Editorial Board', value: '25+', color: 'text-purple-600' },
     { icon: Clock, label: 'Avg. Review Time', value: '6 weeks', color: 'text-orange-600' },
     { icon: Globe, label: 'Countries', value: '45+', color: 'text-red-600' },
-    { icon: FileText, label: 'Articles Published', value: '180+', color: 'text-indigo-600' }
+    // { icon: FileText, label: 'Articles Published', value: '180+', color: 'text-indigo-600' }
   ];
 
   const features = [
@@ -41,11 +41,11 @@ export const JournalContent: React.FC = () => {
       title: 'Fast Publication',
       description: 'Streamlined review process with average 6-week turnaround'
     },
-    {
-      icon: Award,
-      title: 'Indexed & Recognized',
-      description: 'Indexed in major databases including Scopus and Web of Science'
-    }
+    // {
+    //   icon: Award,
+    //   title: 'Indexed & Recognized',
+    //   description: 'Indexed in major databases including Scopus and Web of Science'
+    // }
   ];
 
   return (
