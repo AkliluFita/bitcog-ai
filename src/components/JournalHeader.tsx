@@ -12,7 +12,7 @@ export const JournalHeader: React.FC = () => {
       <div className="container-custom py-6 sm:py-8 md:py-12 px-4 sm:px-6">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-0 bo">
           {/* Journal Info & Cover */}
-          <div className="flex flex-col items-center lg:flex-row lg:items- gap-4 sm:gap-6 border">
+          <div className="flex flex-col items-center lg:flex-row lg:items- gap-4 sm:gap-6">
             {/* Journal Cover */}
             <div className="w-28 h-36 sm:w-36 sm:h-48 md:w-44 md:h-56 lg:w-52 lg:h-64 flex-shrink-0 rounded-lg overflow-hidden shadow-2xl border-4 border-white/20">
               <img
