@@ -67,38 +67,41 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, onNavigat
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled 
-        ? 'bg-background/98 backdrop-blur-xl shadow-lg border-b border-border/50' 
-        : 'bg-gradient-to-r from-background/80 to-background/60 backdrop-blur-md'
+        ? 'bg-background/98 backdrop-blur-xl shadow-xl border-b border-accent/20' 
+        : 'bg-gradient-to-r from-background via-background/95 to-primary/5 backdrop-blur-md'
     }`}>
+      {/* Top accent bar */}
+      <div className="h-1 bg-gradient-to-r from-accent via-primary to-accent" />
+      
       <div className="container-custom">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-18 py-3">
           {/* Logo */}
-          <div className="flex-shrink-0 transition-transform duration-300 hover:scale-105"> 
+          <div className="flex-shrink-0 transition-all duration-300 hover:scale-105 group"> 
             <img
-                     src="https://i.imgur.com/BNRXuBN.png"
-                     alt="Bitcog Insightive - AI and Data Science Solutions"
-                     className="w-[16rem] h-14 object-contain filter drop-shadow-sm"
-                   />
+              src="https://i.imgur.com/BNRXuBN.png"
+              alt="Bitcog Insightive - AI and Data Science Solutions"
+              className="w-[14rem] md:w-[16rem] h-12 md:h-14 object-contain filter drop-shadow-sm group-hover:drop-shadow-md transition-all"
+            />
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:block">
             <NavigationMenu>
-              <NavigationMenuList className="space-x-6">
+              <NavigationMenuList className="space-x-1 lg:space-x-2">
                 {menuItems.map((item) => (
                   <NavigationMenuItem key={item.id}>
                     {item.type === 'dropdown' ? (
                       <>
-                        <NavigationMenuTrigger className="nav-link">
+                        <NavigationMenuTrigger className="nav-link-enhanced px-3 lg:px-4 py-2 rounded-lg text-sm lg:text-base font-medium text-foreground/80 hover:text-accent hover:bg-accent/10 transition-all duration-200">
                           {item.label}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
-                          <div className="w-48 p-2">
+                          <div className="w-56 p-2 bg-card/95 backdrop-blur-xl border border-border/50 rounded-xl shadow-xl">
                             {item.items?.map((subItem) => (
                               <NavigationMenuLink key={subItem.id} asChild>
                                 <Link
                                   to={subItem.id}
-                                  className="block px-3 py-2 text-sm rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
+                                  className="block px-4 py-2.5 text-sm rounded-lg hover:bg-accent/10 hover:text-accent transition-all duration-200"
                                 >
                                   {subItem.label}
                                 </Link>
@@ -110,14 +113,22 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, onNavigat
                     ) : item.type === 'link' ? (
                       <Link
                         to={item.id}
-                        className={`nav-link ${location.pathname === item.id ? 'active' : ''}`}
+                        className={`nav-link-enhanced px-3 lg:px-4 py-2 rounded-lg text-sm lg:text-base font-medium transition-all duration-200 ${
+                          location.pathname === item.id 
+                            ? 'text-accent bg-accent/15 shadow-sm' 
+                            : 'text-foreground/80 hover:text-accent hover:bg-accent/10'
+                        }`}
                       >
                         {item.label}
                       </Link>
                     ) : (
                       <button
                         onClick={() => handleNavClick(item.id)}
-                        className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
+                        className={`nav-link-enhanced px-3 lg:px-4 py-2 rounded-lg text-sm lg:text-base font-medium transition-all duration-200 ${
+                          activeSection === item.id 
+                            ? 'text-accent bg-accent/15 shadow-sm' 
+                            : 'text-foreground/80 hover:text-accent hover:bg-accent/10'
+                        }`}
                       >
                         {item.label}
                       </button>
@@ -135,15 +146,20 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection, onNavigat
               size="icon"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
+              className="relative w-10 h-10 rounded-lg hover:bg-accent/10 transition-all"
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              <div className="flex flex-col items-center justify-center gap-1.5">
+                <span className={`block w-5 h-0.5 bg-foreground transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+                <span className={`block w-5 h-0.5 bg-foreground transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`} />
+                <span className={`block w-5 h-0.5 bg-foreground transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+              </div>
             </Button>
           </div>
         </div>
 
         {/* Mobile Menu */}
         <div 
-          className={`md:hidden fixed inset-0 top-20 z-40 transition-all duration-300 ${
+          className={`md:hidden fixed inset-0 top-[4.5rem] z-40 transition-all duration-300 ${
             isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
           }`}
         >

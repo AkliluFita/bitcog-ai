@@ -15,6 +15,7 @@ import MissionVision from "./pages/about/MissionVision";
 import Team from "./pages/about/Team";
 import Testimonials from "./pages/about/Testimonials";
 import JoinOurTeam from "./pages/about/JoinOurTeam";
+import { PWAInstallPrompt } from "./components/PWAInstallPrompt";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <PWAInstallPrompt />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
