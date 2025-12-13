@@ -190,6 +190,19 @@
     @apply text-accent;
   }
 
+  .nav-link-enhanced {
+    @apply relative overflow-hidden;
+  }
+
+  .nav-link-enhanced::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 w-0 h-0.5 bg-accent transition-all duration-300 -translate-x-1/2;
+  }
+
+  .nav-link-enhanced:hover::after {
+    @apply w-3/4;
+  }
+
   /* Form Styles */
   .form-input {
     @apply border-input bg-background text-foreground placeholder:text-accent;

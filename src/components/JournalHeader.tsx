@@ -14,7 +14,7 @@ export const JournalHeader: React.FC = () => {
           {/* Journal Info & Cover */}
           <div className="flex flex-col items-center lg:flex-row lg:items- gap-4 sm:gap-6 border">
             {/* Journal Cover */}
-            <div className="w-20 h-28 sm:w-24 sm:h-32 md:w-32 md:h-40 flex-shrink-0 rounded-lg overflow-hidden shadow-2xl border-4 border-dark/20">
+            <div className="w-28 h-36 sm:w-36 sm:h-48 md:w-44 md:h-56 lg:w-52 lg:h-64 flex-shrink-0 rounded-lg overflow-hidden shadow-2xl border-4 border-white/20">
               <img
                 src={journalCover}
                 alt="Bitcog Journal of AI and Data Science Cover"
