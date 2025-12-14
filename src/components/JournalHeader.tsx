@@ -6,12 +6,12 @@ import journalCover from '@/assets/Journal of AI and DS cover.png';
 
 export const JournalHeader: React.FC = () => {
   return (
-    <div className="bg-[#1976D2] text-white">
+    <div className="bg-[#1976D2] text-white mt-14   ">
       {/* Main Header - Compact horizontal layout like reference */}
-      <div className="container-custom py-4 px-4 sm:px-6">
+      <div className="container-custom py-4 px-6 sm:px-6  md:h-[10rem] md:relative">
         <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 lg:gap-10">
           {/* Journal Cover - Left side */}
-          <div className="w-24 h-32 sm:w-28 sm:h-36 md:w-32 md:h-40 flex-shrink-0 shadow-lg border-2 border-black/20">
+          <div className="w-24 h-32 sm:w-28 sm:h-36 md:w-[9rem] md:h-[12rem] flex-shrink-0 shadow-lg border-2 border-black/20 md:absolute top-[-2rem] bottom-0 left-[-2rem]">
             <img
               src={journalCover}
               alt="Bitcog Journal of AI and Data Science Cover"
@@ -20,7 +20,7 @@ export const JournalHeader: React.FC = () => {
           </div>
 
           {/* Journal Info - Center */}
-          <div className="flex-1 text-center sm:text-left">
+          <div className="flex-1 text-center sm:text-left md:ml-[6rem]">
             <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-heading font-semibold mb-1">
               BITCOG Journal of AI and Data Science
             </h1>
@@ -31,14 +31,15 @@ export const JournalHeader: React.FC = () => {
 
           {/* Metrics - Right side */}
           <div className="flex items-center gap-4 sm:gap-6 flex-shrink-0">
-            <div className="text-center border-r border-white/30 pr-4 sm:pr-6">
+            {/* <div className="text-center border-r border-white/30 pr-4 sm:pr-6">
               <div className="text-lg sm:text-xl md:text-2xl font-bold">TBA</div>
               <div className="text-xs sm:text-sm text-white/80">CiteScore</div>
             </div>
             <div className="text-center">
               <div className="text-lg sm:text-xl md:text-2xl font-bold">TBA</div>
               <div className="text-xs sm:text-sm text-white/80">Impact Factor</div>
-            </div>
+            </div> */}
+            <div className="text-[0.8rem] md:text-[1.3rem] text-white/70"> Journal Metrics (IF, CiteScore): TBA – Coming Soon!</div>
           </div>
         </div>
       </div>
